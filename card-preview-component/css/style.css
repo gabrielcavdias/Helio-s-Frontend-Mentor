@@ -1,0 +1,96 @@
+:root{
+    --ffPrimary: 'Inter', sans-serif;
+    --ffSecondary: 'Lexend Deca', sans-serif;
+}
+
+body{
+    background-color: hsl(233, 47%, 7%);
+    font-size: 15px;
+    font-family: var(--ffPrimary);
+}
+.card{
+    border-radius: 15px;    
+    margin: 5rem auto;
+    background:  hsl(244, 38%, 16%);
+    display: flex;
+    max-width: 800px;
+}
+.card__info{
+    padding: 35px;
+}
+.card__main{
+    margin: 0 auto;
+    max-width: 50%;
+}
+/*Card info main text*/
+.card__info h2{
+    font-size: 2rem;
+    color: #fff;
+}
+.card__info h2>span{
+    color: hsl(277, 64%, 61%);
+}
+.card__info__description{
+    color: rgba(255,255,255, 0.60);
+    font-family: var(--ffSecondary);
+    font-size: 0.9rem;
+    line-height: 25px;
+    max-width: 80%;
+    margin-bottom: 3rem;
+}
+.card__info__results{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    max-width: 80%;
+}
+.card__info__results__number{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+.card__info__results p{
+    margin: 1px 0;
+    font-size: 0.9rem;
+    color: rgba(255,255,255, 0.60);
+    text-transform: uppercase;
+}
+.card__img{
+    background: linear-gradient(to right, rgba(161, 25, 245, 0.4), rgba(161, 25, 245, 0.4)), url(../images/image-header-desktop.jpg);
+    background-size: 100% 100%;
+    width: 100%;
+    height: 370px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+@media screen and (min-width: 350px) and (max-width:700px){
+
+    .card{
+        flex-direction: column-reverse;
+        width: 90%;
+        text-align: center;
+    }
+    .card__img{
+        border-radius: 0;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        background: linear-gradient(to right, rgba(161, 25, 245, 0.4), rgba(161, 25, 245, 0.4)), url(../images/image-header-mobile.jpg);
+        height: 250px;
+        background-size: 100% 100%;
+    }
+    .card__info__description{
+        margin-bottom: 1rem;
+        max-width: 100%;
+    }
+    h2{
+        font-size: 1rem;
+    }
+    .card__info__results{
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .card__info__results__number{
+        display: block;
+    }
+}
