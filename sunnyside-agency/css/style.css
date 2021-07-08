@@ -1,16 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap');
 :root{
     --ff-main: 'Barlow', sans-serif;
     --ff-sec: 'Fraunces', serif;
     --drk-blue: hsl(212, 27%, 19%);
-    --drk-grsh-blue: hsl(232, 10%, 55%);
+    --drk-grsh-blue: hsl(231, 8%, 44%);
     --grsh-blue: hsl(210, 4%, 67%);
-
     font-size: 18px;
     scroll-behavior: smooth;
 }
+
 *{
     margin: 0;
     padding: 0;
+}
+@media screen and (min-width: 350px) and (max-width:700px){
+    :root{
+        font-size: 16px;
+    }
 }
 /*General rules*/
 ul{
@@ -34,10 +40,90 @@ header{
     background-size: cover;
     background-repeat: no-repeat;
 }
+.hamburguer{
+    display: none;
+}
+/*Menu Mobile*/
+#menu__mobile{
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    clip-path: polygon(84% 17%, 100% 0, 100% 100%, 0 100%, 0 17%);
+    color: var(--drk-grsh-blue);
+    text-align: center;
+    width: 80%;
+    left: 2.5rem;
+    top: 4rem;
+    position: absolute;
+}
+#menu__mobile a[href="#contact"]{
+    background-color: hsl(51, 100%, 49%);
+    padding: .6rem;
+    border-radius: 45px;
+    font-size: 2rem;
+}
+#menu__mobile li:first-child{
+    padding-top: 80px;
+}
+
+#menu__mobile li{
+    font-size: 2.5rem;
+    padding: 25px 35px;
+}
+
+@media screen and (min-width: 350px) and (max-width:700px){
+    header{
+        background: url('../images/mobile/image-header.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+    .hamburguer{
+        display: block;
+    }
+    .trace{
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 5px;
+        transition: all 0.5s ease-in-out;   
+    }
+    .trace::before, .trace::after{
+        position: absolute;
+        content: ' ';
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 5px;
+        transition: all 0.5s ease-in-out;   
+    }
+    .trace::before{
+        bottom: 8px;
+    }
+    .trace::after{
+        top: 8px;
+    }
+    .hambur-btn.open .trace{
+        transform: translate(-5px);
+    }
+    .hambur-btn{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+    #menu__desktop{
+        display: none;
+    }
+}
 header h1{
     font-family: var(--ff-main);
     font-weight: bolder;
-       color: #fff;
+    color: #fff;
 }
 nav{
     display: flex;
@@ -63,6 +149,12 @@ header a[href="#contact"]{
     font-weight: bolder;
     text-transform: uppercase;
     border-radius: 20px;
+    transition: 0.5s ease-out;
+}
+header a[href="#contact"]:hover{
+    background-color: #6ED0FF;
+    color: #fff;
+    transition: 0.5s ease-out;
 }
 .creativity{
     font-size: 3rem;
@@ -84,6 +176,35 @@ header a[href="#contact"]{
 #about, #projects, #services{
     display: flex;
     height: 100vh;
+}
+
+@media screen and (min-width: 350px) and (max-width:700px){
+    #about, #projects, #services{
+        height: 120vh;
+    }
+    #about{
+        flex-direction: column-reverse;
+    }
+    #projects{
+        flex-direction: column;
+    }
+    .description{
+        height: 50vh;
+        text-align: center;
+    }
+    .img{
+        height: 55vh;
+    }
+    .egg{
+        background: url(../images/mobile/image-transform.jpg);
+        background-position: center;
+    }
+    .cup{
+        background: url(../images/mobile/image-stand-out.jpg);
+    }
+    .description{
+        margin: 4rem auto;
+    }
 }
 section>.img, .services__desc{
     width: 100%;
@@ -112,6 +233,7 @@ section>.img, .services__desc{
     color: var(--drk-grsh-blue);
     font-weight: bold;
     font-family: var(--ff-main);
+    font-size: 1.2rem;
     line-height: 1.5rem;
     margin-bottom: 1rem;
 }
@@ -142,6 +264,18 @@ section>.img, .services__desc{
     position: relative;
     text-align: center;
 }
+@media screen and (min-width: 350px) and (max-width:700px){
+    #services{
+        height: 200vh;
+        flex-wrap: wrap;
+    }
+    .gph-des{
+        background: url('../images/mobile/image-graphic-design.jpg');
+    }
+    .phtgry{
+        background: url('../images/mobile/image-photography.jpg');
+    }
+}
 #services h2{   
     font-family: var(--ff-sec);
     color: var(--drk-blue);
@@ -159,14 +293,16 @@ section>.img, .services__desc{
 .gph-des{
     background: url(../images/desktop/image-graphic-design.jpg);
     background-size: cover;
+    background-position: center;
 }
 .phtgry{
     background: url(../images/desktop/image-photography.jpg);
     background-size: cover;
+    background-position: center;
 }
 .services__desc__wrapper{
     position: absolute;
-    bottom: 4rem;
+    bottom: 1rem;
 }
 /*Testimonials*/
 #testimonials{
@@ -175,8 +311,20 @@ section>.img, .services__desc{
 .testimonials__wrapper{
     display: flex;  
 }
+@media screen and (min-width: 350px) and (max-width:700px){
+    #testimonials{
+        height: auto;
+    }
+    #testimonials h2{
+        margin: 2rem;
+    }
+    .testimonials__wrapper{
+        flex-direction: column;
+    }
+}
+
 #testimonials h2{
-    margin: 3rem;
+    margin: 4rem;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 1.5rem;
@@ -221,6 +369,15 @@ section>.img, .services__desc{
 .btf__images{
     display: flex;
     height: 70vh;
+}
+@media screen and (min-width: 350px) and (max-width:700px){
+    .btf__images{
+        display: grid;
+        height: 60;
+        grid-template-areas:
+        'btf__images__1  btf__images__2'
+        'btf__images__3  btf__images__4';
+    }
 }
 .btf__images div{
     width: 100%;
