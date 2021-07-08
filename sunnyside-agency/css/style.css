@@ -420,9 +420,25 @@ footer li{
     font-weight: bolder;
     font-family: var(--ff-main);
 }
+footer a{
+    transition: .3s;
+}
 footer a:hover{
-    color: hsl(7, 99%, 70%);
-    transition: .6s;
+    color: #fff;
+    transition: .3s;
+}
+.icons li{
+    padding: 10px;
+}
+.icons li:hover{
+    cursor: pointer;
+}
+.icons path{
+    transition: .3s;
+}
+.icons li:hover path{
+    fill: #fff;
+    transition: .3s ease-in-out;
 }
 @keyframes dropping {
     0%{
