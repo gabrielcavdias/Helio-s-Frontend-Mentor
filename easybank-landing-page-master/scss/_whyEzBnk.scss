@@ -1,0 +1,54 @@
+.whyEzBnk{
+    background-color: $lght-blue;
+    position: relative;
+    z-index: -1;
+    margin-top: -7rem;
+    padding: 3rem 4rem;
+    h2{
+        color: $drk-blue;
+        font-size: 2rem;
+        font-weight: 300;
+    }
+    &__description{
+        width: 70%;
+    }
+    p{
+        margin-top: 1.2rem;
+        color: darken($grsh-blue,10);
+    }
+    &__features{
+        margin-top: 2rem;
+        @include flex-around;
+        &__card{
+            h3{
+                margin: 1rem 0;
+                color: $drk-blue;
+                font-weight: 400;
+            }
+            p{
+                width: 90%;
+            } 
+        }
+        padding-bottom: 5em;
+    }
+}
+@media screen and (min-width: 350px) and (max-width:800px){
+    .whyEzBnk{
+        margin-top: 1rem;
+        h2,h3,p{
+            text-align: center;
+            width: 100%;
+        }
+        padding: 2rem 3rem;
+        &__features{
+            flex-direction: column;
+            p{
+                margin-bottom: 2rem;
+            }
+            img{
+                display: block;
+                margin: 0 auto;
+            }
+        }       
+    }
+}

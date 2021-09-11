@@ -1,0 +1,66 @@
+.intro{
+    @include flex-around;
+
+    
+    background-image: url('../images/bg-intro-desktop.svg');
+    background-size: 1000px;
+    background-repeat: no-repeat;
+    //Trial and error
+    background-position: right -220px top -100px;
+    //
+    &__description{
+        padding: 8rem 2rem;
+        h2{
+            font-size: 3rem;
+            line-height: 1.2;
+            width: 80%;
+            font-weight: 300;
+            color: $drk-blue;
+        }
+        p{
+            margin: 1rem 0;
+            color: darken($grsh-blue,10);
+            font-weight: 400;
+            width: 74%;
+            line-height: 1.5;
+        }
+        .defaultBtn{
+            display: inline-block;
+            margin-top: 1rem;
+        }
+    }
+    img{
+        margin-top: -6rem;
+        margin-right: -6rem;
+    }
+}
+@media screen and (min-width: 350px) and (max-width:800px){
+    .intro{
+        flex-direction: column-reverse;
+        background-image: url('../images/bg-intro-mobile.svg');
+        background-size: 350px;
+        max-height: 100vh;
+        background-position: right 2px top 2px;
+        position: relative;
+        img{
+            margin-top: -7rem;
+            margin-right: 0;
+        }
+        &__description{
+            padding: 15px 10px;
+            h2{
+                font-size: 2rem;
+            }
+            h2,p{
+                width: 100%;
+                text-align: center;
+            }
+            .defaultBtn{
+                display: block;
+                width: 50%;
+                text-align: center;
+                margin: 1rem auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,700;1,400&display=swap');
+//Variables 
+$grsh-blue: hsl(233, 8%, 62%);
+$lime-green: hsl(136, 65%, 51%);
+$drk-blue: hsl(233, 26%, 24%);
+$lght-blue: hsl(220, 16%, 96%);
+$lght-gray: hsl(0, 0%, 98%);
+$gradient: linear-gradient(to right, $lime-green, hsl(192, 70%, 51%));
+@mixin flex-around{
+    display: flex;
+    justify-content: space-around;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    font-size: 18px;
+}
+img{
+    max-width: 100%;
+}
+body{
+    font-family: 'Public Sans', Helvetica, Arial, sans-serif;
+    overflow-x: hidden; 
+    background-color: $lght-gray;
+}
+.defaultBtn{
+    padding: .8em 1.5em;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 510;
+    background-image: $gradient;
+    &:hover{
+        background-image: linear-gradient(to right, lighten($lime-green,10), lighten(hsl(192, 70%, 51%), 10));
+    }
+}
