@@ -301,6 +301,7 @@ header .menuToggler {
 }
 
 .news .articles article {
+  padding: 10px;
   background-color: #fff;
 }
 
