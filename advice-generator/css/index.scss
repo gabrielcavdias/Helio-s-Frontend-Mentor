@@ -50,7 +50,8 @@ body {
   transition: 0.3s ease-in-out;
   cursor: pointer;
   &:hover {
-    transform: translate(-50%, -50%) scale(1.1) rotate(360deg);
+    background-color: lighten($neonGreen, 5);
+    box-shadow: 0 0 13px $neonGreen;
   }
 }
 .lineDesktop {
