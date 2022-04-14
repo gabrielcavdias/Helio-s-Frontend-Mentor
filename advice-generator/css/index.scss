@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;800&display=swap");
+@import "variables";
+body {
+  background-color: $drkBlue;
+  color: $lightCyan;
+  overflow: hidden;
+  font-family: "Manrope", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.advice {
+  font-weight: 800;
+  border-radius: 14px;
+  background-color: $drkGrayishBlue;
+  width: min(444px, 88%);
+  padding: 20px;
+  padding-bottom: 55px;
+  text-align: center;
+  position: relative;
+  box-shadow: 5px 8px 10px rgba($grshBlue, 0.1);
+  p:not(.advice__heading) {
+    font-size: 28px;
+    margin-block: 1.5rem;
+  }
+}
+.line {
+  font-size: 0;
+}
+.advice__heading {
+  color: $neonGreen;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+.dice {
+  background-color: $neonGreen;
+  border-radius: 50%;
+  width: 24px;
+  aspect-ratio: 1;
+  padding: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  bottom: -55px;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    transform: translate(-50%, -50%) scale(1.1) rotate(360deg);
+  }
+}
+.lineDesktop {
+  @media screen and (max-width: 580px) {
+    display: none;
+  }
+}
+.lineMobile {
+  display: none;
+  @media screen and (max-width: 580px) {
+    display: inline;
+  }
+}
+.copyright {
+  position: absolute;
+  font-weight: 300;
+  bottom: 10px;
+  text-align: center;
+  font-size: 0.8rem;
+  p {
+    margin: 0;
+  }
+  a {
+    color: inherit;
+  }
+}
